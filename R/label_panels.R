@@ -5,19 +5,25 @@
 #' Optionally append facet title.
 #' 
 
-# this works for a single facet.  need to extend for grids
-# need to figure out how to pass argument to show value
-make_labelstring <- function(mypanels, show.value = TRUE) {
-# make_labelstring <- function(mypanels) {
-
+# this works for facet_wrap.  Does not work for 2-D grids.
+# need to figure out how to pass argument to show value, currently taken 
+# from global env
+make_labelstring <- function(mypanels) {
   mylabels <- sapply(mypanels, function(x) {LETTERS[which(mypanels == x)]})
   
-  # if(show.value) {
-  #   mylabels <- paste(mylabels, names(mylabels), sep = ": ")
-  # }
-
+  if(exists("show.value") && show.value) {
+    mylabels <- paste(mylabels, names(mylabels), sep = ": ")
+  }
+  else {
+    # if a label_key var exists, populate it with panel =value pairs
+    if(exists("label_key")) {
+      my_label_key <- names(mylabels)
+      names(my_label_key) <- unname(mylabels)
+      label_key <<- my_label_key
+    }
+  }
   return(mylabels)
 }
-  
 
-# label_panels <- ggplot2::as_labeller(make_labelstring)
+
+label_panels <- ggplot2::as_labeller(make_labelstring)
