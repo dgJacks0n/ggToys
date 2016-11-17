@@ -4,10 +4,12 @@
 #' figure labels (A, B, etc) for ease of citation in documen text.
 #' Optionally append facet title.
 #' 
+#' This works for facet_wrap.  Does not work for 2-D grids.
+#' 
+#' Currently value for show.value is pooled from parent namespace
+#' and values for label_key are pushed back.  Not a good way...
+#' Need to define a namespace (class?) with set and get methods?
 
-# this works for facet_wrap.  Does not work for 2-D grids.
-# need to figure out how to pass argument to show value, currently taken 
-# from global env
 make_labelstring <- function(mypanels) {
   mylabels <- sapply(mypanels, function(x) {LETTERS[which(mypanels == x)]})
   
