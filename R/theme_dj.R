@@ -1,5 +1,5 @@
-#' theme_dj
-#' Custom ggplot theme with relative sizes based on theme_bw
+#' Custom ggplot theme with relative sizes 
+#' 
 #' Use just like a built-in theme:
 #'   myplot <- ggplot(...) + theme_dj(15)  
 #'   font size specifies MINIMUM font that will be used in the plot
