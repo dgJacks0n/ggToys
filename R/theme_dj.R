@@ -1,10 +1,11 @@
-#' Custom ggplot theme with relative sizes 
+#' Custom ggplot theme with bolded text for easier legibility
 #' 
 #' Use just like a built-in theme:
 #'   myplot <- ggplot(...) + theme_dj(15)  
-#'   font size specifies MINIMUM font that will be used in the plot
-#'   can also provide a 'base theme` 
-#'   myplot + theme_dj(base_theme = theme_dark())
+#'   
+#' @param base_font (default 12): specifies the minimum font used in the plot
+#' @param base_family: specifies the font family
+#' @param base_theme (default theme_bw): base on a different ggplot theme 
 
 theme_dj <- function(base_size = 12, base_family = "",
                      base_theme = theme_bw()) {
