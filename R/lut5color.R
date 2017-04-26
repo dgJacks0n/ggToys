@@ -8,12 +8,12 @@ lut5 <- function() {
   return(mycolors)
 }
 
-  lut5color <- function( colors = lut5() ) {
-    return(ggplot2::scale_color_gradientn(colors = colors))
+  lut5color <- function( colors = lut5(), ... ) {
+    return(ggplot2::scale_color_gradientn(colors = colors, ...))
   }
 
 
-lut5fill <- function( colors = lut5() ) {
-  return(ggplot2::scale_fill_gradientn(colors = colors))
+lut5fill <- function( colors = lut5(), ... ) {
+  return(ggplot2::scale_fill_gradientn(colors = colors, ...))
 }
 
