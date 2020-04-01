@@ -23,7 +23,7 @@ theme_dj <- function(base_size = 12, base_family = "",
   
   # update theme elements
   base_theme +
-    theme( text = element_text(size = base_size),
+    ggplot2::theme( text = element_text(size = base_size),
            axis.text = element_text(size=rel(1)),
            axis.title = element_text(face="bold", size=rel(1),  vjust = 0.1, hjust=0.5),
            plot.title = element_text(lineheight=1, face="bold", size = rel(1.25), hjust = 0.5),
