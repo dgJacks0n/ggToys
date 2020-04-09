@@ -1,8 +1,8 @@
 #' Custom ggplot theme with bolded text for easier legibility
 #'   
 #' @param base_size Minimum font used in the plot
-#' @param base_family Font family (e.g. )
 #' @param base_theme (default ggplot2::theme_minimal): base on a different ggplot theme
+#' @param ... Other parameters passed to base_theme
 #' 
 #' @examples
 #' \dontrun{
@@ -18,7 +18,7 @@
 #' @export 
 #' 
 
-theme_dj <- function(base_size = 12, base_family = "",
+theme_dj <- function(base_size = 12, 
                      base_theme = ggplot2::theme_minimal()) {
   
   if(!(any(class(base_theme) == "theme") & 
@@ -33,7 +33,7 @@ theme_dj <- function(base_size = 12, base_family = "",
   
   
   # update theme elements
-  base_theme +
+  base_theme(...) +
     ggplot2::theme( text = ggplot2::element_text(size = base_size),
            axis.text = ggplot2::element_text(size=ggplot2::rel(1)),
            axis.title = ggplot2::element_text(face="bold", size=ggplot2::rel(1),  vjust = 0.1, hjust=0.5),
