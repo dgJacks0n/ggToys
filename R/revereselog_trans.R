@@ -1,8 +1,11 @@
-# Reverse log transform function for P values
-# myplot + scale_y_continuous(trans=reverselog_trans(10)) 
-# argument 'base' - base of log to transform
+#' Reverse log transform for values < 1
+#' @examples
+#'   myplot <- myplot + scale_y_continuous(trans=reverselog_trans(base = 2)) 
+#'   
+#' @param base (default 10): base for log tranformatin
 
-reverselog_trans <- function(base = exp(1)) {
+
+reverselog_trans <- function(base = 10) {
   trans <- function(x) -log(x, base)
   inv <- function(x) base^(-x)
   scales::trans_new(paste0("reverselog-", format(base)), trans, inv, 
