@@ -2,7 +2,10 @@
 #' @examples
 #'   myplot <- myplot + scale_y_continuous(trans=reverselog_trans(base = 2)) 
 #'   
-#' @param base (default 10): base for log tranformatin
+#' @param base (default 10): base for log tranformation
+#' 
+#' @export
+#' 
 
 
 reverselog_trans <- function(base = 10) {
