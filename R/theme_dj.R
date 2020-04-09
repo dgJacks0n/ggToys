@@ -9,6 +9,7 @@
 #' @param base_theme (default theme_bw): base on a different ggplot theme
 #' 
 #' @export 
+#' 
 
 theme_dj <- function(base_size = 12, base_family = "",
                      base_theme = ggplot2::theme_bw()) {
