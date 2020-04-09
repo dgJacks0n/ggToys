@@ -19,7 +19,8 @@
 #' 
 
 theme_dj <- function(base_size = 12, 
-                     base_theme = ggplot2::theme_minimal()) {
+                     base_theme = ggplot2::theme_minimal(),
+                     ...) {
   
   if(!(any(class(base_theme) == "theme") & 
               any(class(base_theme) == "gg"))) {
