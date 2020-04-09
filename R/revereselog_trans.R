@@ -15,6 +15,8 @@
 
 
 reverselog_trans <- function(base = 10) {
+  force(base)
+  
   trans <- function(x) { (-1 * log(x, base))}
   
   inv <- function(x) { base^(-1 * x) }
