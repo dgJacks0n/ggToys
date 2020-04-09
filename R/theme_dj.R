@@ -20,8 +20,9 @@
 
 theme_dj <- function(base_size = 12, 
                      base_theme = ggplot2::theme_minimal(),
-                     ...) {
+                     base_family = "") {
   
+
   if(!(any(class(base_theme) == "theme") & 
               any(class(base_theme) == "gg"))) {
     stop("base_theme argument must be a ggplot theme")
@@ -34,7 +35,7 @@ theme_dj <- function(base_size = 12,
   
   
   # update theme elements
-  base_theme(...) +
+  base_theme +
     ggplot2::theme( text = ggplot2::element_text(size = base_size),
            axis.text = ggplot2::element_text(size=ggplot2::rel(1)),
            axis.title = ggplot2::element_text(face="bold", size=ggplot2::rel(1),  vjust = 0.1, hjust=0.5),
