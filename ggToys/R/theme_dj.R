@@ -1,18 +1,28 @@
 #' Custom ggplot theme with bolded text for easier legibility
-#' 
-#' Use just like a built-in theme:
-#' @examples
-#'   myplot <- ggplot(...) + theme_dj(15)  
 #'   
-#' @param base_font (default 12): specifies the minimum font used in the plot
-#' @param base_family: specifies the font family
-#' @param base_theme (default theme_bw): base on a different ggplot theme
+#' @param base_size Minimum font used in the plot
+#' @param base_theme (default ggplot2::theme_minimal): base on a different ggplot theme
+#' @param ... Other parameters passed to base_theme
+#' 
+#' @examples
+#' \dontrun{
+#'   # starting from a ggplot2 plot `myplot`
+#'   myplot <- myplot + theme_dj()  # add theme with defaults
+#'   
+#'   myplot <- myplot + theme_dj(18) # increase base font size to 18 point
+#'   
+#'   # Change base theme to theme_dark (why would you do that?)
+#'   myplot <- myplot + theme_dj(base_theme = ggplot2::theme_dark())
+#' }
 #' 
 #' @export 
+#' 
 
-theme_dj <- function(base_size = 12, base_family = "",
-                     base_theme = ggplot2::theme_bw()) {
+theme_dj <- function(base_size = 12, 
+                     base_theme = ggplot2::theme_minimal(),
+                     base_family = "") {
   
+
   if(!(any(class(base_theme) == "theme") & 
               any(class(base_theme) == "gg"))) {
     stop("base_theme argument must be a ggplot theme")
